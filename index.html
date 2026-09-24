@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>had to take profits sir | $https</title>
+  <meta name="description" content="had to take profits sir. The memes were too strong, the gains were calling, and the community delivered. Buy $https with Arc USDC." />
+  <meta name="theme-color" content="#0d4ed0" />
+  <meta property="og:title" content="had to take profits sir ($https)" />
+  <meta property="og:description" content="The memes were too strong, the gains were calling, and the community delivered." />
+  <meta property="og:image" content="banner.jpg" />
+  <link rel="icon" href="logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: "#10233f",
+            xp: "#0d4ed0",
+            cream: "#f4f1e8",
+            err: "#d42323",
+            dog: "#fff8ee"
+          },
+          fontFamily: {
+            meme: ['"Lilita One"', "Impact", "Haettenschweiler", "sans-serif"],
+            ui: ["Tahoma", '"Segoe UI"', "sans-serif"],
+            body: ["Nunito", "Tahoma", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    :root { color-scheme: dark; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Nunito, Tahoma, "Segoe UI", sans-serif;
+      color: #10233f;
+      background: #04101c;
+    }
+    .scene, .shade { position: fixed; inset: 0; }
+    .scene {
+      z-index: -2;
+      background: url("background.jpg") center / cover no-repeat;
+    }
+    .shade {
+      z-index: -1;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse at 50% 18%, rgba(20, 90, 190, 0.18), rgba(3, 10, 22, 0.62) 68%),
+        linear-gradient(180deg, rgba(3, 12, 28, 0.28), rgba(2, 8, 18, 0.72));
+    }
+    .taskbar {
+      background: linear-gradient(180deg, #49a0ff 0%, #1a62e4 14%, #0c49cc 62%, #0838aa 100%);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 10px 28px rgba(0, 0, 0, 0.35);
+    }
+    .win {
+      background: #f4f1e8;
+      border: 3px solid #08306b;
+      border-radius: 10px;
+      box-shadow:
+        0 0 0 1px #8ec0ff,
+        0 22px 50px rgba(0, 0, 0, 0.42),
+        0 0 70px rgba(40, 120, 255, 0.16);
+    }
+    .win-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 6px 8px 6px 10px;
+      border-radius: 7px 7px 0 0;
+      background: linear-gradient(180deg, #5eb0ff 0%, #1d6cf0 10%, #0d4ed8 48%, #1664ee 86%, #6cbcff 100%);
+      color: #fff;
+      font-family: Tahoma, "Segoe UI", sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      text-shadow: 0 1px 0 rgba(0, 20, 70, 0.45);
+    }
+    .ctrl {
+      width: 21px;
+      height: 20px;
+      display: grid;
+      place-items: center;
+      border-radius: 3px;
+      background: linear-gradient(#f7f9fc, #c5d4ea);
+      box-shadow: 0 0 0 1px #163e86, inset 0 1px 0 #fff;
+      color: #10233f;
+      font-family: Tahoma, sans-serif;
+      font-size: 12px;
+      line-height: 1;
+    }
+    .ctrl.x {
+      background: linear-gradient(#f08b82, #d13224 55%, #a61d14);
+      color: #fff;
+      box-shadow: 0 0 0 1px #6e120c, inset 0 1px 0 rgba(255, 255, 255, 0.45);
+    }
+    .win-status {
+      display: flex;
+      gap: 6px;
+      padding: 4px 8px 6px;
+      background: #ece9d8;
+      border-top: 1px solid #fff;
+      box-shadow: inset 0 1px 0 #b9b5a8;
+      font-family: Tahoma, sans-serif;
+      font-size: 11px;
+      color: #10233f;
+    }
+    .win-status span {
+      min-width: 0;
+      padding: 1px 8px;
+      border-top: 1px solid #808080;
+      border-left: 1px solid #808080;
+      border-bottom: 1px solid #fff;
+      border-right: 1px solid #fff;
+    }
+    .xp-field {
+      min-width: 0;
+      flex: 1;
+      padding: 8px 12px;
+      background: #fff;
+      border-top: 1px solid #404040;
+      border-left: 1px solid #404040;
+      border-bottom: 1px solid #fff;
+      border-right: 1px solid #fff;
+      box-shadow: inset 1px 1px 0 #808080;
+      font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #10233f;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border-radius: 8px;
+      font-family: "Lilita One", Impact, sans-serif;
+      letter-spacing: 0.04em;
+      line-height: 1;
+      cursor: pointer;
+      user-select: none;
+      transition: transform 0.12s ease, filter 0.12s ease;
+    }
+    .btn-buy {
+      color: #fff;
+      background: linear-gradient(180deg, #6cb4ff 0%, #1d6af0 40%, #0b3fbe 100%);
+      border: 1px solid #062a78;
+      text-shadow: 0 1px 0 rgba(0, 20, 80, 0.4);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55), 0 6px 0 #06245f;
+    }
+    .btn-cream {
+      color: #0d3f9e;
+      background: linear-gradient(180deg, #fff 0%, #e7e2d4 100%);
+      border: 1px solid #6d84a8;
+      box-shadow: inset 0 1px 0 #fff, 0 6px 0 #b7b09e;
+    }
+    .btn:hover { filter: brightness(1.06); }
+    .btn:active { transform: translateY(5px); }
+    .btn-buy:active { box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55), 0 1px 0 #06245f; }
+    .btn-cream:active { box-shadow: inset 0 1px 0 #fff, 0 1px 0 #b7b09e; }
+    .btn:focus-visible, a:focus-visible, button:focus-visible {
+      outline: 3px solid #ffe27a;
+      outline-offset: 2px;
+    }
+    .dog {
+      filter: drop-shadow(0 16px 18px rgba(0, 0, 0, 0.45));
+      animation: bob 4.8s ease-in-out infinite;
+    }
+    @keyframes bob {
+      0%, 100% { transform: translateY(0) rotate(-1.5deg); }
+      50% { transform: translateY(-8px) rotate(1deg); }
+    }
+    .ticker { overflow: hidden; background: #08327a; border-block: 3px solid #06245a; }
+    .ticker-track {
+      display: flex;
+      width: max-content;
+      animation: ticker 32s linear infinite;
+    }
+    .ticker:hover .ticker-track { animation-play-state: paused; }
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    .tilt { transition: transform 0.2s ease; }
+    .tilt:hover { transform: rotate(0deg) translateY(-4px); }
+    .sunken {
+      border-top: 1px solid #7f9db9;
+      border-left: 1px solid #7f9db9;
+      border-bottom: 1px solid #fff;
+      border-right: 1px solid #fff;
+      box-shadow: inset 0 0 0 1px rgba(0, 40, 90, 0.15);
+    }
+    section[id] { scroll-margin-top: 5.5rem; }
+    ::selection { background: #0d4ed0; color: #fff; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .dog, .ticker-track { animation: none; }
+    }
+  </style>
+</head>
+<body class="pb-24 md:pb-0">
+  <div class="scene" aria-hidden="true"></div>
+  <div class="shade" aria-hidden="true"></div>
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-[60] focus:rounded focus:bg-cream focus:px-3 focus:py-2">Skip to content</a>
+
+  <header class="taskbar sticky top-0 z-50">
+    <div class="mx-auto flex max-w-6xl items-center gap-3 px-3 py-2.5 sm:px-5">
+      <a href="#top" class="flex min-w-0 items-center gap-2 text-white">
+        <img src="logo.png" alt="" width="40" height="40" class="h-10 w-10 shrink-0 rounded-md border-2 border-white object-cover" />
+        <span class="min-w-0">
+          <span class="block truncate font-meme text-lg leading-none sm:text-2xl">had to take profits sir</span>
+          <span class="font-ui text-[11px] font-bold tracking-[0.22em] text-[#ffe08a]">$https</span>
+        </span>
+      </a>
+      <nav class="ml-auto hidden items-center gap-1 md:flex" aria-label="Page">
+        <a class="rounded px-3 py-2 font-ui text-sm font-bold text-white hover:bg-white/15" href="#story">Story</a>
+        <a class="rounded px-3 py-2 font-ui text-sm font-bold text-white hover:bg-white/15" href="#how">How to Buy</a>
+        <a class="rounded px-3 py-2 font-ui text-sm font-bold text-white hover:bg-white/15" href="#chart">Chart</a>
+      </nav>
+      <div class="ml-auto flex items-center gap-2 md:ml-2">
+        <a href="https://x.com/httpsarcx" target="_blank" rel="noopener noreferrer" aria-label="had to take profits sir on X" class="overflow-hidden rounded-md ring-2 ring-white/90 transition hover:scale-105">
+          <img src="x.png" alt="X" width="36" height="36" class="h-9 w-9 object-cover" />
+        </a>
+        <a href="https://dexscreener.com/arc/TBA" target="_blank" rel="noopener noreferrer" class="btn btn-cream hidden px-4 py-2.5 text-sm sm:inline-flex">Chart</a>
+        <a href="https://argus.world/token/TBA" target="_blank" rel="noopener noreferrer" class="btn btn-buy px-4 py-2.5 text-sm">Buy Now</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="top" class="mx-auto max-w-6xl px-4 pb-8 pt-8 sm:pt-12">
+      <div class="relative">
+        <img src="logo.png" alt="had to take profits sir, the $https dog" width="510" height="510" class="dog relative z-20 mx-auto -mb-8 w-44 rounded-2xl border-4 border-white outline outline-[3px] outline-[#0d4ed0] sm:w-52 lg:absolute lg:-top-8 lg:left-2 lg:mb-0 lg:w-[280px]" />
+
+        <article class="win relative z-10">
+          <div class="win-title">
+            <span class="truncate lg:pl-[250px]">Obscure Error — had to take profits sir.exe</span>
+            <span class="flex shrink-0 gap-1" aria-hidden="true"><span class="ctrl">_</span><span class="ctrl">□</span><span class="ctrl x">×</span></span>
+          </div>
+          <div class="px-5 pb-6 pt-8 sm:px-8 lg:pb-8 lg:pl-[300px] lg:pr-10 lg:pt-7">
+            <p class="font-meme text-2xl leading-none text-err sm:text-3xl">$https</p>
+            <h1 class="mt-1 font-meme text-[2.6rem] leading-[0.92] text-[#0a246a] sm:text-6xl lg:text-7xl">had to take profits sir</h1>
+            <p class="mt-4 max-w-xl font-body text-lg font-bold leading-snug text-ink sm:text-xl">The memes were too strong, the gains were calling, and the community delivered.</p>
+            <p class="mt-3 inline-flex items-center gap-2 rounded border border-[#9eb6d4] bg-white px-3 py-1.5 font-ui text-xs font-bold text-ink">
+              <span>Arc USDC</span>
+              <span class="text-xp" aria-hidden="true">→</span>
+              <span class="text-err">$https</span>
+              <span class="text-[#5c6d86]">on Arc</span>
+            </p>
+
+            <div class="mt-5 flex flex-col gap-2 sm:flex-row sm:items-stretch">
+              <div class="flex min-w-0 flex-1 flex-col gap-1">
+                <span class="font-ui text-[11px] font-bold uppercase tracking-[0.18em] text-xp">Contract address</span>
+                <div class="flex min-w-0 items-center gap-2">
+                  <code class="ca-value xp-field" id="ca-field">TBA</code>
+                  <button type="button" class="btn btn-cream shrink-0 px-4 py-3 text-sm" data-copy data-label="Copy">Copy</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-5 flex flex-wrap items-center gap-3">
+              <a href="https://argus.world/token/TBA" target="_blank" rel="noopener noreferrer" class="btn btn-buy px-6 py-3.5 text-lg">Buy Now</a>
+              <a href="https://dexscreener.com/arc/TBA" target="_blank" rel="noopener noreferrer" class="btn btn-cream px-6 py-3.5 text-lg">Chart</a>
+              <a href="https://x.com/httpsarcx" target="_blank" rel="noopener noreferrer" class="inline-flex overflow-hidden rounded-lg ring-2 ring-[#0d4ed0] transition hover:scale-105" aria-label="Open X">
+                <img src="x.png" alt="X" width="48" height="48" class="h-12 w-12 object-cover" />
+              </a>
+            </div>
+          </div>
+          <div class="win-status" aria-live="polite">
+            <span data-status class="truncate">Ready</span>
+            <span class="hidden sm:inline">Arc USDC</span>
+            <span>$https</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track py-2.5 font-meme text-lg tracking-wide text-[#fff6e4] sm:text-xl">
+        <p class="flex gap-8 px-4">
+          <span>had to take profits sir</span><span class="text-[#ffe08a]">$https</span><span>the memes were too strong</span><span>the gains were calling</span><span>the community delivered</span><span>Arc USDC</span><span>had to take profits sir</span><span class="text-[#ffe08a]">$https</span>
+        </p>
+        <p class="flex gap-8 px-4">
+          <span>had to take profits sir</span><span class="text-[#ffe08a]">$https</span><span>the memes were too strong</span><span>the gains were calling</span><span>the community delivered</span><span>Arc USDC</span><span>had to take profits sir</span><span class="text-[#ffe08a]">$https</span>
+        </p>
+      </div>
+    </div>
+
+    <section class="mx-auto grid max-w-6xl gap-4 px-4 py-10 sm:grid-cols-3" aria-label="Error log">
+      <article class="win tilt -rotate-1">
+        <div class="win-title"><span>Obscure Error</span><span class="ctrl x" aria-hidden="true">×</span></div>
+        <p class="px-4 py-4 font-body text-base font-extrabold leading-snug text-ink">The memes were too strong.</p>
+      </article>
+      <article class="win tilt rotate-1 sm:mt-6">
+        <div class="win-title"><span>Obscure Error</span><span class="ctrl x" aria-hidden="true">×</span></div>
+        <p class="px-4 py-4 font-body text-base font-extrabold leading-snug text-ink">The gains were calling.</p>
+      </article>
+      <article class="win tilt -rotate-1">
+        <div class="win-title"><span>Obscure Error</span><span class="ctrl x" aria-hidden="true">×</span></div>
+        <p class="px-4 py-4 font-body text-base font-extrabold leading-snug text-ink">The community delivered.</p>
+      </article>
+    </section>
+
+    <section id="story" class="mx-auto max-w-6xl px-4 pb-6">
+      <article class="win">
+        <div class="win-title">
+          <span>story.exe — had to take profits sir</span>
+          <span class="flex gap-1" aria-hidden="true"><span class="ctrl">_</span><span class="ctrl">□</span><span class="ctrl x">×</span></span>
+        </div>
+        <div class="grid items-center gap-6 p-5 sm:p-7 lg:grid-cols-2">
+          <div>
+            <h2 class="font-meme text-4xl leading-none text-[#0a246a] sm:text-5xl">had to take profits sir</h2>
+            <p class="mt-4 font-body text-lg font-bold leading-snug text-ink">The memes were too strong, the gains were calling, and the community delivered.</p>
+            <p class="mt-3 font-body text-base font-semibold leading-relaxed text-[#24344d]">A cream dog. A wall of errors. A ticker called $https. Arc USDC goes in, the chart does the talking, and the timeline keeps the receipt. That is the whole trade, and the whole joke.</p>
+            <dl class="mt-5 grid grid-cols-3 gap-2 text-center">
+              <div class="rounded-lg bg-white px-2 py-3 shadow-[inset_0_0_0_1px_#c5d4ea]">
+                <dt class="font-ui text-[10px] font-bold uppercase tracking-wider text-xp">Chain</dt>
+                <dd class="font-meme text-xl text-ink">Arc</dd>
+              </div>
+              <div class="rounded-lg bg-white px-2 py-3 shadow-[inset_0_0_0_1px_#c5d4ea]">
+                <dt class="font-ui text-[10px] font-bold uppercase tracking-wider text-xp">Pay with</dt>
+                <dd class="font-meme text-xl text-ink">USDC</dd>
+              </div>
+              <div class="rounded-lg bg-white px-2 py-3 shadow-[inset_0_0_0_1px_#c5d4ea]">
+                <dt class="font-ui text-[10px] font-bold uppercase tracking-wider text-xp">Ticker</dt>
+                <dd class="font-meme text-xl text-err">$https</dd>
+              </div>
+            </dl>
+          </div>
+          <figure class="sunken overflow-hidden bg-white">
+            <img src="banner.jpg" alt="Banner of the $https dog in a field of error windows" width="2448" height="816" class="h-52 w-full object-cover sm:h-64 lg:h-72" />
+            <figcaption class="bg-[#ece9d8] px-3 py-1.5 font-ui text-[11px] text-ink">banner — the dog who took profits</figcaption>
+          </figure>
+        </div>
+      </article>
+    </section>
+
+    <section id="how" class="mx-auto max-w-6xl px-4 py-8">
+      <div class="mb-4 flex flex-wrap items-end justify-between gap-3">
+        <div>
+          <p class="font-ui text-xs font-bold uppercase tracking-[0.22em] text-[#d6e6ff]">Arc USDC → $https</p>
+          <h2 class="font-meme text-4xl leading-none text-dog sm:text-5xl">How to Buy</h2>
+        </div>
+        <a href="https://argus.world/token/TBA" target="_blank" rel="noopener noreferrer" class="btn btn-buy px-5 py-3 text-base">Buy Now</a>
+      </div>
+      <ol class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+        <li class="win flex flex-col">
+          <div class="win-title"><span>Step 1</span><span class="ctrl x" aria-hidden="true">×</span></div>
+          <div class="flex flex-1 flex-col p-4">
+            <span class="font-meme text-4xl leading-none text-err">01</span>
+            <h3 class="mt-2 font-meme text-2xl leading-none text-[#0a246a]">Connect on Arc</h3>
+            <p class="mt-2 font-body text-sm font-semibold leading-relaxed text-[#24344d]">Open a wallet that Argus can use and switch the network to Arc. The buy is signed in your wallet, with your Arc USDC.</p>
+          </div>
+        </li>
+        <li class="win flex flex-col">
+          <div class="win-title"><span>Step 2</span><span class="ctrl x" aria-hidden="true">×</span></div>
+          <div class="flex flex-1 flex-col p-4">
+            <span class="font-meme text-4xl leading-none text-err">02</span>
+            <h3 class="mt-2 font-meme text-2xl leading-none text-[#0a246a]">Fund Arc USDC</h3>
+            <p class="mt-2 font-body text-sm font-semibold leading-relaxed text-[#24344d]">Load USDC on Arc. That balance is what you spend on $https, and on Arc it covers gas too. The wallet needs USDC before the swap can start.</p>
+          </div>
+        </li>
+        <li class="win flex flex-col">
+          <div class="win-title"><span>Step 3</span><span class="ctrl x" aria-hidden="true">×</span></div>
+          <div class="flex flex-1 flex-col p-4">
+            <span class="font-meme text-4xl leading-none text-err">03</span>
+            <h3 class="mt-2 font-meme text-2xl leading-none text-[#0a246a]">Match the CA</h3>
+            <p class="mt-2 font-body text-sm font-semibold leading-relaxed text-[#24344d]">Hit Buy Now and confirm the market is $https paired with Arc USDC. Copy the contract and match it on the token before you sign.</p>
+            <div class="mt-3 flex items-center gap-2">
+              <code class="ca-value xp-field !text-sm">TBA</code>
+              <button type="button" class="btn btn-cream shrink-0 px-3 py-2.5 text-sm" data-copy data-label="Copy">Copy</button>
+            </div>
+          </div>
+        </li>
+        <li class="win flex flex-col">
+          <div class="win-title"><span>Step 4</span><span class="ctrl x" aria-hidden="true">×</span></div>
+          <div class="flex flex-1 flex-col p-4">
+            <span class="font-meme text-4xl leading-none text-err">04</span>
+            <h3 class="mt-2 font-meme text-2xl leading-none text-[#0a246a]">Swap and exit</h3>
+            <p class="mt-2 font-body text-sm font-semibold leading-relaxed text-[#24344d]">Enter the Arc USDC amount. Read the price impact, taxes, and fees, then confirm in the wallet. The memes were too strong. The gains were calling.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="chart" class="mx-auto max-w-6xl px-4 py-6">
+      <article class="win">
+        <div class="win-title">
+          <span>$https chart — Dexscreener</span>
+          <span class="flex gap-1" aria-hidden="true"><span class="ctrl">_</span><span class="ctrl">□</span><span class="ctrl x">×</span></span>
+        </div>
+        <div class="flex flex-wrap items-center gap-3 border-b border-[#d5d0c4] bg-[#f7f4ec] px-4 py-2">
+          <a href="https://dexscreener.com/arc/TBA" target="_blank" rel="noopener noreferrer" class="font-ui text-xs font-bold text-xp underline">Open chart</a>
+          <span class="font-ui text-xs font-bold text-ink">Arc</span>
+          <span class="font-ui text-xs font-bold text-err">$https / USDC</span>
+          <a href="https://dexscreener.com/arc/TBA" target="_blank" rel="noopener noreferrer" class="btn btn-cream ml-auto px-4 py-2 text-sm">Chart</a>
+        </div>
+        <div class="bg-[#071424] p-2 sm:p-3">
+          <iframe
+            title="Dexscreener chart for $https on Arc"
+            src="https://dexscreener.com/arc/TBA?embed=1&loadChartSettings=0&trades=0&tabs=0&info=0&chartLeftToolbar=0&chartDefaultOnMobile=1&chartTheme=dark&theme=dark&chartStyle=1&chartType=usd&interval=15"
+            class="h-[70vh] min-h-[480px] max-h-[720px] w-full rounded border border-[#1d4e9c] bg-[#0b1b33]"
+            loading="lazy"
+          ></iframe>
+        </div>
+        <div class="win-status">
+          <span class="truncate">dexscreener.com/arc/TBA</span>
+          <span>Arc</span>
+        </div>
+      </article>
+    </section>
+
+    <footer class="mx-auto max-w-6xl px-4 pb-10 pt-4">
+      <div class="win">
+        <div class="win-title">
+          <span>had to take profits sir</span>
+          <span class="text-[#ffe08a]">$https</span>
+        </div>
+        <div class="flex flex-col items-start justify-between gap-4 p-5 sm:flex-row sm:items-center">
+          <div class="flex items-center gap-3">
+            <img src="logo.png" alt="" width="56" height="56" class="h-14 w-14 rounded-lg border-2 border-white object-cover outline outline-2 outline-[#0d4ed0]" />
+            <p class="max-w-md font-body text-sm font-bold leading-snug text-ink">had to take profits sir. The memes were too strong, the gains were calling, and the community delivered.</p>
+          </div>
+          <div class="flex flex-wrap items-center gap-2">
+            <a href="https://x.com/httpsarcx" target="_blank" rel="noopener noreferrer" class="overflow-hidden rounded-md ring-2 ring-[#0d4ed0]" aria-label="X">
+              <img src="x.png" alt="X" width="40" height="40" class="h-10 w-10 object-cover" />
+            </a>
+            <a href="https://dexscreener.com/arc/TBA" target="_blank" rel="noopener noreferrer" class="btn btn-cream px-4 py-2.5 text-sm">Chart</a>
+            <a href="https://argus.world/token/TBA" target="_blank" rel="noopener noreferrer" class="btn btn-buy px-4 py-2.5 text-sm">Buy Now</a>
+          </div>
+        </div>
+        <div class="win-status">
+          <span class="truncate">Meme coin on Arc. You trade from your own wallet.</span>
+          <span class="hidden sm:inline">$https</span>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <div class="fixed inset-x-0 bottom-0 z-50 flex gap-2 border-t-2 border-[#08306b] bg-[#0c45c4] p-2 md:hidden">
+    <a href="https://dexscreener.com/arc/TBA" target="_blank" rel="noopener noreferrer" class="btn btn-cream flex-1 py-3 text-base">Chart</a>
+    <a href="https://argus.world/token/TBA" target="_blank" rel="noopener noreferrer" class="btn btn-buy flex-1 py-3 text-base">Buy Now</a>
+  </div>
+
+  <script>
+    const CA = "TBA";
+    document.querySelectorAll(".ca-value").forEach((el) => {
+      el.textContent = CA;
+    });
+
+    function copyText(value) {
+      if (navigator.clipboard && window.isSecureContext) {
+        return navigator.clipboard.writeText(value);
+      }
+      return new Promise((resolve, reject) => {
+        const field = document.createElement("textarea");
+        field.value = value;
+        field.setAttribute("readonly", "");
+        field.style.position = "fixed";
+        field.style.left = "-9999px";
+        document.body.appendChild(field);
+        field.select();
+        try {
+          document.execCommand("copy") ? resolve() : reject();
+        } catch (error) {
+          reject(error);
+        } finally {
+          field.remove();
+        }
+      });
+    }
+
+    document.querySelectorAll("[data-copy]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const label = btn.dataset.label || btn.textContent;
+        copyText(CA).then(() => {
+          btn.textContent = "Copied";
+          document.querySelectorAll("[data-status]").forEach((el) => {
+            el.textContent = "CA copied to clipboard";
+          });
+          window.setTimeout(() => {
+            btn.textContent = label;
+          }, 1600);
+        }).catch(() => {
+          btn.textContent = "Select CA";
+          const field = document.getElementById("ca-field");
+          if (field) {
+            const range = document.createRange();
+            range.selectNodeContents(field);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+          }
+          window.setTimeout(() => {
+            btn.textContent = label;
+          }, 1600);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
